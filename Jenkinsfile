@@ -40,6 +40,20 @@ pipeline{
             }
 
         }
+        // stage('Deploy to k8s'){
+        //     steps{
+        //         script{
+        //             kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'k8sconfigpwd')
+        //         }
+        //     }
+        // }
+        stage('Deploy to K8s') {
+            steps{
+                script {
+                    sh "kubectl --kubeconfig=/home/ubuntu/.kube/config apply -f deploymentservice.yaml"
+                }
+            }
+    }
 
     }
 }
