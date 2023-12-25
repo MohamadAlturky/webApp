@@ -50,7 +50,8 @@ pipeline{
         stage('Deploy to K8s') {
             steps{
                 script {
-                    sh "kubectl --kubeconfig=/home/ubuntu/.kube/config apply -f deploymentservice.yaml"
+                    // sh "kubectl --kubeconfig=/home/ubuntu/.kube/config apply -f deploymentservice.yaml"
+                    sh "kubectl apply -f deploymentservice.yaml"
                 }
             }
     }
