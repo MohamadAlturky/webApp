@@ -7,6 +7,7 @@ pipeline{
         RELEASE = "1.0.0"
         DOCKER_USER = "hiastdevops"
         DOCKER_PASS = 'dockerhub'
+        KUBE_CREDENTIALS = 'kubectl'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
     }
@@ -50,7 +51,7 @@ pipeline{
         stage('Deploy to K8s') {
             steps{
                 script {
-                    sh "sudo kubectl --kubeconfig=/home/ubuntu/.kube/config apply -f deploymentservice.yaml"
+                    sh "kubectl --kubeconfig=${KUBE_CREDENTIALS} apply -f deploymentservice.yaml"
                 }
             }
     }
