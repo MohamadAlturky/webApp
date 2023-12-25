@@ -3,7 +3,7 @@ pipeline{
         label "agent"
     }
     environment {
-        APP_NAME = "webApp"
+        APP_NAME = "webapp"
         RELEASE = "1.0.0"
         DOCKER_USER = "hiastdevops"
         DOCKER_PASS = 'dockerhub'
