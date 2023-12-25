@@ -18,6 +18,7 @@ spec:
       containers:
       - name: web-api
         image: hiastdevops/webapp:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
           name: http-web-api
@@ -37,6 +38,6 @@ spec:
     app.kubernetes.io/name: web-api
   ports:
     - protocol: TCP
-      port: 9376
+      port: 8084
       targetPort: 80
   type: LoadBalancer
