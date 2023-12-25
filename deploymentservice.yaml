@@ -13,7 +13,7 @@ spec:
       labels:
         env: prod
         app: web-api
-         app.kubernetes.io/name: web-api
+        app.kubernetes.io/name: web-api
     spec:
       containers:
       - name: web-api
@@ -26,7 +26,8 @@ spec:
           value: http://+:80
 
 
----
+___
+
 apiVersion: v1
 kind: Service
 metadata:
