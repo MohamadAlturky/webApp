@@ -18,7 +18,7 @@ pipeline{
 
         }
     
-        stage("Git config"){
+        stage("Git SCM"){
             steps {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/MohamadAlturky/webApp'
             }
