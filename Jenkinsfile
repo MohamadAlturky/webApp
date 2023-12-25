@@ -2,10 +2,6 @@ pipeline{
     agent{
         label "agent"
     }
-    tools {
-        jdk 'Java17'
-        maven 'Maven3'
-    }
     environment {
         APP_NAME = "webApp"
         RELEASE = "1.0.0"
