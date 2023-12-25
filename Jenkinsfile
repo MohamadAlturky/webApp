@@ -7,7 +7,39 @@ pipeline{
         RELEASE = "1.0.0"
         DOCKER_USER = "hiastdevops"
         DOCKER_PASS = 'dockerhub'
-        KUBE_CREDENTAILS = 'k8sconfigpwd'
+        KUBE_CREDENTAILS = 'apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: /home/ubuntu/.minikube/ca.crt
+    extensions:
+    - extension:
+        last-update: Mon, 25 Dec 2023 20:59:51 +03
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: cluster_info
+    server: https://192.168.67.2:8443
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Mon, 25 Dec 2023 20:59:51 +03
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: minikube
+  user:
+    client-certificate: /home/ubuntu/.minikube/profiles/minikube/client.crt
+    client-key: /home/ubuntu/.minikube/profiles/minikube/client.key
+'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
     }
