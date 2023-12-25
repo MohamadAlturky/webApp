@@ -5,7 +5,7 @@ pipeline{
     environment {
         APP_NAME = "webApp"
         RELEASE = "1.0.0"
-        DOCKER_USER = "HiastDevops"
+        DOCKER_USER = "hiastdevops"
         DOCKER_PASS = 'dockerhub'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
