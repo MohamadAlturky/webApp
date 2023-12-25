@@ -26,7 +26,7 @@ spec:
           value: http://+:80
 
 
-___
+---
 
 apiVersion: v1
 kind: Service
