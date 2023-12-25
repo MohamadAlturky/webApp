@@ -51,7 +51,7 @@ pipeline{
         stage('Deploy to K8s') {
             steps{
                 script {
-                    sh "kubectl --kubeconfig=${KUBE_CREDENTIALS} apply -f deploymentservice.yaml"
+                    sh "kubectl --kubeconfig=/home/ubuntu/personal/jenkins-demo/config apply -f deploymentservice.yaml"
                 }
             }
     }
